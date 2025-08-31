@@ -38,12 +38,6 @@
             margin: 0 auto;
         }
 
-        .left-column {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
         .network-container {
             background: rgba(0, 255, 136, 0.1);
             border: 2px solid #00ff88;
@@ -53,13 +47,13 @@
             min-height: 300px;
             height: 800px;
         }
-        
         .howto-container {
-            background: rgba(0, 136, 255, 0.1);
-            border: 1px solid #0088ff;
-            border-radius: 8px;
-            padding: 15px;
-            font-size: 0.9em;
+        background: rgba(0, 136, 255, 0.1);
+        border: 1px solid #0088ff;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+        font-size: 0.9em;
         }
 
         .control-panel {
@@ -470,34 +464,34 @@
     </div>
 
     <div class="main-container">
-        <div class="left-column">
-            <div class="network-container" id="networkContainer">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                    <h3 id="networkTitle">🌐 Network Topology</h3>
-                    <button onclick="fitNodesToScreen()" style="background: linear-gradient(45deg, #4ecdc4, #44a08d); border: none; padding: 8px 12px; border-radius: 6px; color: white; font-size: 0.9em; cursor: pointer;">🔍 Fit All Nodes</button>
-                </div>
-                
-                <!-- Nodes will be dynamically created -->
+        <div class="network-container" id="networkContainer">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 id="networkTitle">🌐 Network Topology</h3>
+                <button onclick="fitNodesToScreen()" style="background: linear-gradient(45deg, #4ecdc4, #44a08d); border: none; padding: 8px 12px; border-radius: 6px; color: white; font-size: 0.9em; cursor: pointer;">📐 Fit All Nodes</button>
             </div>
+            
+            <!-- Nodes will be dynamically created -->
+        </div>
 
-            <!-- How to Use Instructions - now properly positioned below network container -->
-            <div class="howto-container" id="HowToContainer">
-                <h4 style="color: #00ccff; margin-bottom: 10px; font-size: 1em;">💻 How to Use the Nodes Window</h4>
-                <p style="margin-bottom: 8px; color: #ccc;">The Network Topology window shows the peer-to-peer Bitcoin network simulation in real-time.</p>
-               
-                <div style="margin-left: 10px;">
-                    <p style="margin: 6px 0;"><strong style="color: #00ff88;">1. View Node Blockchains:</strong> Click any circular node (N0, N1, etc.) to see that node's blockchain copy.</p>
-                    <p style="margin: 6px 0;"><strong style="color: #00ff88;">2. Inspect Block Details:</strong> In the blockchain view, click any block to see its hash, transactions, and metadata.</p>
-                    <p style="margin: 6px 0;"><strong style="color: #00ff88;">3. Drag Nodes:</strong> Click and drag nodes to rearrange the network layout. Connections auto-redraw.</p>
-                    <p style="margin: 6px 0;"><strong style="color: #00ff88;">4. Add New Nodes:</strong> Use "⚡ Add New Mining Node" in the control panel to expand the network.</p>
-                    <p style="margin: 6px 0;"><strong style="color: #00ff88;">5. Auto-Fit Layout:</strong> Click "🔍 Fit All Nodes" to organize cluttered node positions automatically.</p>
                 </div>
+
+        <!-- How to Use Instructions - positioned below network container -->
+        <div class="howto-container" id="HowToContainer" style="background: rgba(0, 136, 255, 0.1); border: 1px solid #0088ff; border-radius: 8px; padding: 15px; margin-bottom: 20px; font-size: 0.9em;">
+            <h4 style="color: #00ccff; margin-bottom: 10px; font-size: 1em;">💻 How to Use the Nodes Window</h4>
+            <p style="margin-bottom: 8px; color: #ccc;">The Network Topology window shows the peer-to-peer Bitcoin network simulation in real-time.</p>
+           
+            <div style="margin-left: 10px;">
+                <p style="margin: 6px 0;"><strong style="color: #00ff88;">1. View Node Blockchains:</strong> Click any circular node (N0, N1, etc.) to see that node's blockchain copy.</p>
+                <p style="margin: 6px 0;"><strong style="color: #00ff88;">2. Inspect Block Details:</strong> In the blockchain view, click any block to see its hash, transactions, and metadata.</p>
+                <p style="margin: 6px 0;"><strong style="color: #00ff88;">3. Drag Nodes:</strong> Click and drag nodes to rearrange the network layout. Connections auto-redraw.</p>
+                <p style="margin: 6px 0;"><strong style="color: #00ff88;">4. Add New Nodes:</strong> Use "⚡ Add New Mining Node" in the control panel to expand the network.</p>
+                <p style="margin: 6px 0;"><strong style="color: #00ff88;">5. Auto-Fit Layout:</strong> Click "📐 Fit All Nodes" to organize cluttered node positions automatically.</p>
             </div>
         </div>
 
         <div class="control-panel">
             <div class="mempool" style="margin-bottom: 20px;">
-                <h3>📋 Transaction Mempool</h3>
+                <h3>📝 Transaction Mempool</h3>
                 <div id="mempoolTransactions" style="height: 180px; overflow-y: auto; border: 1px solid #ffcc00; border-radius: 6px; background: rgba(255, 204, 0, 0.05); padding: 8px;">
                     <p>No pending transactions</p>
                 </div>
@@ -559,7 +553,7 @@
             </div>
 
             <button onclick="startMining()">⛏️ Start Mining</button>
-            <button onclick="showNodeInfo()">📊 Show Node Info</button>
+            <button onclick="showNodeInfo()">🔍 Show Node Info</button>
             <button onclick="showNodeConnections()">🌐 Node Connections</button>
             
             <div style="display: flex; gap: 10px; margin-bottom: 10px;">
@@ -569,7 +563,7 @@
 
             <div style="background: rgba(78, 205, 196, 0.1); border: 1px solid #4ecdc4; border-radius: 8px; padding: 15px; margin-bottom: 10px;">
                 <label style="display: block; margin-bottom: 10px; color: #4ecdc4;">
-                    🔧 Network Height: <span id="heightValue">800</span>px
+                    📏 Network Height: <span id="heightValue">800</span>px
                 </label>
                 <input type="range" id="heightSlider" min="200" max="800" step="50" value="400" 
                        style="width: 100%; height: 8px; border-radius: 5px; background: #333; 
