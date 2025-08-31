@@ -43,3 +43,5 @@ This project is built as a self-contained web page with:
     Vanilla JavaScript: The core logic is implemented in a BitcoinSimulator class, which manages all aspects of the blockchain and network. It uses a simplified hashing function to demonstrate the principles of Proof of Work.
 
 Please note that this is an educational tool and not a functional cryptocurrency. The cryptographic functions and network logic are simplified to make the concepts visually intuitive and easy to understand.
+
+If you have benefit from this simulation, can buy me a coffee here: bitcoin:BC1QEU90WULM098NST43RY88H8FM5ZRTGF7PXSYGV6.
